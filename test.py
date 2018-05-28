@@ -21,7 +21,7 @@ while not ts.value():    # Stop program by pressing touch sensor button
     distance = ir.value()
 
     if distance < 60:
-        Leds.set_color(Leds.LEFT, Leds.RED)
+        Sound.speak('Get away from me you a hole').wait()
     else:
         Leds.set_color(Leds.LEFT, Leds.GREEN)
 
