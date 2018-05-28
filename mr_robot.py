@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from ev3 import *
+from ev3dev.ev3 import *
 
 def main():
   pass
