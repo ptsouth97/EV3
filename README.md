@@ -17,3 +17,5 @@ Run from command line:
 
 Exit from EV3 brick:
 * exit
+
+*Go through book and port code*
