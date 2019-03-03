@@ -18,4 +18,4 @@ Run from command line:
 Exit from EV3 brick:
 * exit
 
-*Go through book and port code*
+*Go through Mindstorms book and port code*
