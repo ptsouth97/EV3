@@ -1,15 +1,39 @@
 #!/usr/bin/env python3
 
-'''The loop checks whether any button is pressed and if so beeps and exits the script. The script checks the button state every 0.01 second.'''
-
-from ev3dev.ev3 import *
+import ev3dev.ev3 as ev3
 from time import sleep
 
-btn = Button()
 
-while True:
-    if btn.any():    # Checks if any button is pressed.
-        Sound.beep().wait()  # Wait for the beep to finish.
-        exit()  # Stop the program.
-    else:
-        sleep(0.01)  # Wait 0.01 second	
+def main():
+	''' Main function for testing purposes'''
+
+	btn = ev3.Button()
+	check(btn)
+
+	
+def check(btn):
+	'''The loop checks whether any button is pressed and if so beeps and exits the script. 
+	   The script checks the button state every 0.01 second.'''
+
+
+	btn = Button()
+
+	while True:
+
+ 		# Checks if any button is pressed.
+		if btn.any():   
+			# Beep and then wait for the beep to finish
+			Sound.beep().wait()  
+
+			# Stop the program
+			exit()  
+
+		else:
+			# Wait 0.01 second
+			sleep(0.01)  	
+
+	return
+
+
+if __name__ == '__main__':
+	main()
