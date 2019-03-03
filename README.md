@@ -11,3 +11,6 @@ To access the EV3 from a terminal:
 * From command line: *ssh robot@ev3dev.local*
 * Enter password
 
+Run from command line:
+* Make file executable: *chmod +x filename.py*
+* Run file: *./filename.py*
