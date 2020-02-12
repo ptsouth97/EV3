@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import ev3dev.ev3 as ev3
+from time import sleep
 
 
 def main():
@@ -9,14 +10,15 @@ def main():
 	mB = ev3.LargeMotor('outB')
 	mC = ev3.LargeMotor('outC')
 	
-	tank_drive = MoveTank(mB, mC)
-	run(tank_drive)
-
-
-def run(tk_drive):
-	''' run loop'''
-
+	ifr = ev3.InfraredSensor()
+	ifr.mode = 'IR-PROX'
 	
+	tank_drive = MoveTank(mB, mC)
+	run(tank_drive, ifr)
+
+
+def run(tk_drive, ir):
+	''' run loop'''
 	
 	while True:
 		
@@ -25,10 +27,14 @@ def run(tk_drive):
 		tk_drive.on(50, 50)	
 		
 		# CHECK IR SENSOR
-				
-		# IF IR SENSORY PROXIMITY < 25, BACK UP TO THE RIGHT
+		distance = ir.value()
 		
-		# WAIT 0.25 SEC
+		# IF IR SENSORY PROXIMITY < 25, BACK UP TO THE RIGHT
+		if distance < 50:
+			ev3.Sound.beep()
+			
+			# WAIT 0.25 SEC
+			sleep(0.25)
 		
 		
 if __name__ == '__main__':
