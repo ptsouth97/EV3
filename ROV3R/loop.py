@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
+<<<<<<< HEAD
 from ev3dev2.motor import OUTPUT_A, OUTPUT_B, MoveTank
-#import ev3dev.ev3 as ev3
-#from ev3dev.motor import MoveTank
+from time import sleep
 
 
 def main():
 	''' main function'''
 
+<<<<<<< HEAD
 	# mB = ev3.LargeMotor('outB')
 	# mC = ev3.LargeMotor('outC')
 
@@ -24,7 +25,7 @@ def run(tank):
 	tank.on_for_seconds(100, 100, 5, brake=True, block=True)
 
 	return
-
+		
 
 if __name__ == '__main__':
 	main()
