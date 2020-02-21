@@ -6,7 +6,7 @@ from ev3dev2.sound import Sound
 
 
 def main():
-	''' main function'''
+	''' main function to initialize settings'''
 
 	# initialize tank drive
 	tank_drive = MoveTank(OUTPUT_B, OUTPUT_C)
@@ -23,7 +23,7 @@ def main():
 
 
 def run(tank, ir, sound):
-	''' run loop'''
+	''' run loop to drive ROV3R forward until it encounters an obstacle'''
 
 	while True:
 
