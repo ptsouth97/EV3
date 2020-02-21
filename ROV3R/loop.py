@@ -35,7 +35,10 @@ def run(tank, ir, sound):
 
 		# If proximity is less than 60, beep and back up to the right for 1/4 second
 		if distance < 60:
+			# Beep
 			sound.beep()
+
+			# Backup
 			tank.on_for_seconds(-100, 0, 0.25)
 			continue
 
