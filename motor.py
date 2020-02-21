@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # so that script can be run from Brickman
 
+# import statements
 import ev3dev.ev3 as ev3
 from time import sleep
 
