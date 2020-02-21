@@ -26,11 +26,15 @@ def run(tank, ir, sound):
 	while True:
 
 		distance = ir.value()
-		print("The distance is " + str(distance))
+		#print("The distance is " + str(distance))
+
+		tank.on(100, 100)
 
 		if distance < 60:
 			sound.beep()
-			break
+			tank.on_for_seconds(-100, 0, 0.25)
+			#time.sleep(0.25)
+			continue
 
 		#tank.on_for_seconds(100, 100, 5, brake=True, block=True)
 
